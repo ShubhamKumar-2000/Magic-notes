@@ -1,3 +1,3 @@
 # Magic-Notes
 
-Live demo : https://itsfenil.github.io/Magic-Notes/
+Live demo : https://shubhamkumar-2000.github.io/Magic-notes/
