@@ -1,32 +1,36 @@
 showNotes();
+let addTxt = document.getElementById("addTxt");
+let addTitle = document.getElementById("addtitle"); 
 
-// If a user adds notes, add it to the local storage
-let addBtn = document.getElementById("addBtn");
 addBtn.addEventListener("click", function(e) {
-    let addTxt = document.getElementById("addTxt");
-    let addTitle = document.getElementById("addtitle");
-    let notes = localStorage.getItem("notes");
-    if (notes == null) {
-        notesObj = [];
-    } else {
-        notesObj = JSON.parse(notes);
-    }
-    let myObj = {
-        title: addTitle.value,
-        text: addTxt.value
-    }
-    notesObj.push(myObj);
-    localStorage.setItem("notes", JSON.stringify(notesObj));
-    addTxt.value = "";
-    addTitle.value = "";
-    console.log(notesObj);
     if(!addTxt.value === "" && !addTitle.value === ""){
-        showNotes();
-    }
+        // If a user adds notes, add it to the local storage
+        let addBtn = document.getElementById("addBtn");
+
+        //     let addTxt = document.getElementById("addTxt");
+        //     let addTitle = document.getElementById("addtitle");
+            let notes = localStorage.getItem("notes");
+            if (notes == null) {
+                notesObj = [];
+            } else {
+                notesObj = JSON.parse(notes);
+            }
+            let myObj = {
+                title: addTitle.value,
+                text: addTxt.value
+            }
+            notesObj.push(myObj);
+            localStorage.setItem("notes", JSON.stringify(notesObj));
+            addTxt.value = "";
+            addTitle.value = "";
+            console.log(notesObj);
+            showNotes();
+        }
     else{
         alert("Pls enter value");
     }
 });
+
 
 // Function to show element from localStorage
 function showNotes() {
