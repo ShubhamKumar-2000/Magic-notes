@@ -1,14 +1,12 @@
 showNotes();
-let addTxt = document.getElementById("addTxt");
-let addTitle = document.getElementById("addtitle"); 
 
-addBtn.addEventListener("click", function(e) {
-    if(!addTxt.value === "" && !addTitle.value === ""){
+
+
         // If a user adds notes, add it to the local storage
-        let addBtn = document.getElementById("addBtn");
-
-        //     let addTxt = document.getElementById("addTxt");
-        //     let addTitle = document.getElementById("addtitle");
+      
+    addBtn.addEventListener("click", function(e) {
+             let addTxt = document.getElementById("addTxt");
+            let addTitle = document.getElementById("addtitle");
             let notes = localStorage.getItem("notes");
             if (notes == null) {
                 notesObj = [];
@@ -25,10 +23,6 @@ addBtn.addEventListener("click", function(e) {
             addTitle.value = "";
             console.log(notesObj);
             showNotes();
-        }
-    else{
-        alert("Pls enter value");
-    }
 });
 
 
