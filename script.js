@@ -20,7 +20,12 @@ addBtn.addEventListener("click", function(e) {
     addTxt.value = "";
     addTitle.value = "";
     console.log(notesObj);
-    showNotes();
+    if(!addTxt.value === "" && !addTitle.value === ""){
+        showNotes();
+    }
+    else{
+        alert("Pls enter value");
+    }
 });
 
 // Function to show element from localStorage
